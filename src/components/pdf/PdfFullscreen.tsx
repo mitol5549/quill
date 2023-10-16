@@ -4,9 +4,9 @@ import { Document, Page } from 'react-pdf';
 import { useResizeDetector } from 'react-resize-detector';
 import { Expand, Loader2 } from 'lucide-react';
 
-import { Dialog, DialogContent, DialogTrigger } from './ui/dialog';
-import { useToast } from './ui/use-toast';
-import { Button } from './ui/button';
+import { Dialog, DialogContent, DialogTrigger } from '../ui/dialog';
+import { useToast } from '../ui/use-toast';
+import { Button } from '../ui/button';
 
 interface PdfFullscreenProps {
   fileUrl: string;

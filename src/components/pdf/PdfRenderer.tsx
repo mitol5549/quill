@@ -11,10 +11,10 @@ import { cn } from '@/lib/utils';
 import { ChevronDown, ChevronUp, Loader2, RotateCw, Search } from 'lucide-react';
 
 import { PdfFullscreen } from './PdfFullscreen';
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from './ui/dropdown-menu';
-import { useToast } from './ui/use-toast';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '../ui/dropdown-menu';
+import { useToast } from '../ui/use-toast';
+import { Button } from '../ui/button';
+import { Input } from '../ui/input';
 
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
