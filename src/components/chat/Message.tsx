@@ -11,7 +11,6 @@ interface MessageProps {
   isNextMessageSamePerson: boolean;
 }
 
-// eslint-disable-next-line react/display-name
 export const Message = forwardRef<HTMLDivElement, MessageProps>(({ message, isNextMessageSamePerson }, ref) => {
   return (
     <div
@@ -73,3 +72,5 @@ export const Message = forwardRef<HTMLDivElement, MessageProps>(({ message, isNe
     </div>
   );
 });
+
+Message.displayName = 'Message';
