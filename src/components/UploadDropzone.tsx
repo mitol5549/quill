@@ -8,7 +8,7 @@ import { Cloud, File, Loader2 } from 'lucide-react';
 import { Progress } from './ui/progress';
 import { useToast } from './ui/use-toast';
 
-export const UploadDropzone = () => {
+export const UploadDropzone = ({ isSubscribed }: { isSubscribed: boolean }) => {
   const [isUploading, setIsUploading] = useState(false);
   const [uploadProgress, setUploadProgress] = useState(0);
 
@@ -16,7 +16,7 @@ export const UploadDropzone = () => {
 
   const { toast } = useToast();
 
-  const { startUpload } = useUploadThing('pdfUploader');
+  const { startUpload } = useUploadThing(isSubscribed ? 'proPlanUploader' : 'freePlanUploader');
 
   const { mutate: startPolling } = trpc.getFile.useMutation({
     onSuccess: file => {
@@ -92,7 +92,7 @@ export const UploadDropzone = () => {
                 <p className="mb-2 text-sm text-zinc-700">
                   <span className="font-semibold">Click to upload</span> or drag and drop
                 </p>
-                <p className="text-xs text-zinc-500">PDF (up to 4MB)</p>
+                <p className="text-xs text-zinc-500">PDF (up to {isSubscribed ? '16' : '4'} MB)</p>
               </div>
 
               {acceptedFiles && acceptedFiles[0] ? (
