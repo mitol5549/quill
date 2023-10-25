@@ -6,7 +6,7 @@ import { trpc } from '@/app/_trpc/client';
 import { format } from 'date-fns';
 import Skeleton from 'react-loading-skeleton';
 import { getUserSubscriptionPlan } from '@/lib/stripe';
-import { Ghost, Loader2, MessageSquare, Calendar, Trash } from 'lucide-react';
+import { Ghost, Loader2, MessageSquare, Calendar, Trash, ArrowBigDown, ArrowDown } from 'lucide-react';
 
 import { UploadButton } from './UploadButton';
 import { Button } from './ui/button';
@@ -68,8 +68,8 @@ export const Dashboard = ({ subscriptionPlan }: DashboardProps) => {
                     {format(new Date(file.createdAt), 'MMM yyyy')}
                   </div>
                   <div className="flex items-center gap-2">
-                    <MessageSquare className="h-4 w-4" />
-                    mocked
+                    <ArrowDown className="h-4 w-4" />
+                    {file.uploadStatus.toLowerCase()}
                   </div>
                   <Button
                     size="sm"
